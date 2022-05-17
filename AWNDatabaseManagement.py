@@ -230,7 +230,7 @@ class WN:
 ##    output: list of wordid
 
     def get_wordids_from_word(self,word):
-        if self._index_w.has_key(word):
+        if word in self._index_w:
             return self._index_w[word]
         else:
             return None
@@ -296,7 +296,7 @@ class WN:
             return None
 
     def get_form(self,form):
-        if self._index_f.has_key(form):
+        if form in self._index_f:
             return self._index_f[form]
         else:
             return None
@@ -317,7 +317,7 @@ def processCmdlineOpts(cmdOpts):
         if re.match('-i', cmdOpts[i]):
             opts['i'] = cmdOpts[i+1]
     if not 'i' in opts:
-        opts['i']='E:/usuaris/horacio/arabicWN/AWNdatabase/upc_db.xml'
+        opts['i']='awn.xml'
     return opts
 
 
